@@ -1,5 +1,12 @@
 # simple-todo
 
+## Screenshot
+<img src="sample.png" width="100%" height="auto">
+
+```
+source -> https://dribbble.com/shots/6123325-Daily-UI-042-ToDo-List
+```
+
 ## Project setup
 ```
 yarn install

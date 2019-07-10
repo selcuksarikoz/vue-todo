@@ -1,0 +1,26 @@
+[
+  {
+    todoId: 1,
+    todoName: 'Travel Pack List',
+    createdAt: new Date(),
+    userId: 1,
+    todos: [
+      {
+        id: 1,
+        parentId: 1,
+        createdAt: new Date(),
+        updateAt: new Date(),
+        done: false,
+        text: 'todo 1'
+      },
+      {
+        id: 2,
+        parentId: 1,
+        createdAt: new Date(),
+        updateAt: new Date(),
+        done: false,
+        text: 'todo 2'
+      }
+    ]
+  }
+]
