@@ -44,6 +44,8 @@ export default {
       margin-right: 20px;
       opacity: 0;
       z-index: 1;
+      width: 20px;
+      height: 20px;
       & + label:before {
         border-radius: 50%;
         content: "";

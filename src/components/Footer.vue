@@ -25,7 +25,8 @@ footer {
     font-weight: 500;
     height: 50px;
     position: relative;
-    clip-path: ellipse(50% 50% at 50% 50%);
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
     background-color: #21d08a;
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="drawer">
+    <div class="drawer" @click="toggleDrawer">
       <span class="line"></span>
       <span class="line"></span>
     </div>
@@ -9,15 +9,32 @@
         <img src="../assets/user.png" />
       </a>
     </div>
+    <SideBar :drawer="drawer" />
   </header>
 </template>
 
 <script>
-
+import SideBar from './Sidebar.vue';
 
 export default {
   name: 'Header',
+  data() {
+    return {
+      drawer: false
+    };
+  },
+  components: {
+    SideBar
+  },
   computed: {
+
+  },
+  methods: {
+    toggleDrawer() {
+      this.drawer = !this.drawer;
+    }
+  },
+  created() {
 
   }
 };
