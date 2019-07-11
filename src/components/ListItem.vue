@@ -3,13 +3,26 @@
     <div class="list-item">
       <div class="item-check">
         <input
+          v-if="edit"
+          type="text"
+          :name="Item.id"
+          :id="Item.id"
+          v-model="Item.text"
+          ref="inputbox"
+          @keypress.prevent.enter="save"
+        />
+        <input
+          v-else
           type="checkbox"
           :name="Item.id"
           :id="Item.id"
           :checked="Item.done"
           v-model="Item.done"
         />
-        <label>{{ Item.text }}</label>
+
+        <label v-if="!edit" @click.prevent="toggleEdit($event)">{{
+          Item.text
+        }}</label>
       </div>
     </div>
   </div>
@@ -19,6 +32,28 @@
 export default {
   name: 'ListItem',
   props: ['Item'],
+  data() {
+    return {
+      edit: false
+    };
+  },
+  methods: {
+    toggleEdit(event) {
+      event.preventDefault();
+      if (!this.edit) {
+        this.edit = true;
+        setTimeout(() => {
+          this.$refs.inputbox.focus();
+        }, 0);
+      }
+    },
+    save() {
+      // TODO post method
+      console.log(this.Item);
+      this.edit = false;
+      // console.log(this.$refs.inputbox.value)
+    }
+  },
   created() {
 
   }
@@ -35,17 +70,30 @@ export default {
     font-size: 16px;
     font-weight: 500;
     position: relative;
+    cursor: pointer;
     .item-check {
       display: flex;
       align-items: center;
       position: relative;
     }
-    input[type="checkbox"] {
-      margin-right: 20px;
-      opacity: 0;
-      z-index: 1;
-      width: 20px;
-      height: 20px;
+    input {
+      &[type="checkbox"] {
+        margin-right: 20px;
+        opacity: 0;
+        z-index: 1;
+        width: 20px;
+        height: 20px;
+      }
+      &[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        color: #ccc;
+        &:focus {
+          outline: none;
+        }
+      }
       & + label:before {
         border-radius: 50%;
         content: "";
