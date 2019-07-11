@@ -68,11 +68,9 @@ footer {
     color: #fff;
     font-size: 30px;
     font-weight: 500;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #21d08a;
-    margin: 20px auto;
+    width: 100%;
+    height: auto;
+    background: url("../assets/curl-d.svg") no-repeat center bottom;
     &:focus {
       outline: none;
     }
@@ -83,13 +81,15 @@ footer {
     right: 0px;
     margin: auto;
     width: 90%;
-    top: -40px;
+    bottom: 60px;
     input {
-      box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
       width: 100%;
-      border: 1px solid #21d08a;
+      border: 1px solid rgba(#21d08a, 0.3);
       padding: 15px 10px;
       border-radius: 5px;
+      font-size: 14px;
+      font-weight: 300;
       &:focus {
         outline: none;
       }

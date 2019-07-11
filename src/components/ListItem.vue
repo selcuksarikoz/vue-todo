@@ -43,7 +43,6 @@ export default {
   },
   methods: {
     toggleEdit(event) {
-      console.log(this.$refs)
       event.preventDefault();
       if (!this.edit) {
         this.edit = true;
