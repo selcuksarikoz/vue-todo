@@ -24,6 +24,10 @@
           Item.text
         }}</label>
       </div>
+
+      <div class="todo-options" v-if="!edit">
+        <img src="../assets/menu.svg" :alt="Item.text" />
+      </div>
     </div>
   </div>
 </template>
@@ -39,6 +43,7 @@ export default {
   },
   methods: {
     toggleEdit(event) {
+      console.log(this.$refs)
       event.preventDefault();
       if (!this.edit) {
         this.edit = true;
@@ -70,11 +75,29 @@ export default {
     font-size: 16px;
     font-weight: 500;
     position: relative;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
     cursor: pointer;
+    &:hover .todo-options {
+      opacity: 1;
+      transition: opacity 0.5s ease-in;
+      will-change: opacity;
+    }
+    .todo-options {
+      opacity: 0;
+      transition: opacity 0.5s ease-in;
+      will-change: opacity;
+      img {
+        display: block;
+        width: 20px;
+      }
+    }
     .item-check {
       display: flex;
       align-items: center;
       position: relative;
+      flex: 1;
     }
     input {
       &[type="checkbox"] {
@@ -87,7 +110,8 @@ export default {
       &[type="text"] {
         width: 100%;
         padding: 10px;
-        border: 1px solid #ccc;
+        border: 1px solid whitesmoke;
+        border-radius: 5px;
         font-size: 14px;
         color: #ccc;
         &:focus {

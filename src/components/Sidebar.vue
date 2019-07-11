@@ -31,13 +31,15 @@ aside {
   left: 0px;
   top: 0px;
   transform: translateX(-100%);
-  transition: transform 0.2s ease-in;
+  transition: all 0.6s ease-in;
   will-change: transition;
   box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.07);
   border-top-right-radius: 40px;
+  opacity: 0;
   &.open {
+    opacity: 1;
     transform: translateX(0%);
-    transition: transform 0.2s ease-in;
+    transition: all 0.6s ease-in;
     will-change: transition;
   }
   .sidebar-header {

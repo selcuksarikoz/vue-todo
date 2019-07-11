@@ -87,9 +87,22 @@ export default new Vuex.Store({
 		getActiveTodo: state => state.Todos[0],
 	},
 	mutations: {
+		saveTodoItem(state, todo) {
+			const newdummy = {
+				id: Math.random() * 99,
+				parentId: 1,
+				createdAt: new Date(),
+				updateAt: new Date(),
+				done: false,
+				text: todo
+			};
 
+			state.Todos[0].todos.push(newdummy);
+		}
 	},
 	actions: {
-
+		saveTodoItem({ commit }, todo) {
+			commit('saveTodoItem', todo);
+		}
 	},
 });
