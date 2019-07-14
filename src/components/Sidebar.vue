@@ -1,9 +1,25 @@
 <template>
-  <aside :class="{ open: drawer }">
+  <aside :class="{ open: !drawer }">
     <div class="sidebar-header">
       <div class="back-btn" @click="toggleDrawer">
         <img src="../assets/left-arrow.svg" alt="back" />
       </div>
+    </div>
+    <div class="aside-menu">
+      <ul>
+        <li class="active">
+          <router-link to="/">List</router-link>
+        </li>
+        <li>
+          <router-link to="/settings">Settings</router-link>
+        </li>
+        <li>
+          <router-link to="/profile">Profile</router-link>
+        </li>
+        <li>
+          <router-link to="/about">About</router-link>
+        </li>
+      </ul>
     </div>
   </aside>
 </template>
@@ -50,6 +66,23 @@ aside {
       cursor: pointer;
       img {
         width: 20px;
+      }
+    }
+  }
+  .aside-menu {
+    li {
+      display: block;
+      padding: 10px 20px;
+      &.active {
+        background-color: rgba(#22d38c, 1);
+        a {
+          color: #fff;
+        }
+      }
+      a {
+        display: block;
+        text-decoration: none;
+        color: #22d38c;
       }
     }
   }

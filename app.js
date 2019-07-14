@@ -29,7 +29,9 @@ app.on('ready', () => {
 		window = null;
 	});
 
-	window.loadURL(url);
+	setTimeout(() => {
+		window.loadURL(url);
+	}, 1000);
 });
 
 // app.quit('quit', () => {

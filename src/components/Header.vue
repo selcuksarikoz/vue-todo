@@ -5,9 +5,9 @@
       <span class="line"></span>
     </div>
     <div class="profile-icon">
-      <a href="#">
+      <router-link to="/settings">
         <img src="../assets/user.png" />
-      </a>
+      </router-link>
     </div>
     <SideBar :drawer="drawer" />
   </header>
